@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.teasu.demo.entity.Member;
+import com.teasu.demo.entity.User;
 import com.teasu.demo.repository.UserRepository;
 
 @RestController
@@ -22,7 +22,7 @@ public class HomeController {
 	private PasswordEncoder passwordEncoder;
 	
 	@PostMapping("/members")
-	public String createUser(@RequestBody Member user) {
+	public String createUser(@RequestBody User user) {
 		// 加密密碼
 		String encodePwd = passwordEncoder.encode(user.getPassword());
 		user.setPassword(encodePwd);
@@ -31,7 +31,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/members")
-	public List<Member> members() {
+	public List<User> members() {
 		return userRepository.findAll();
 	}
 

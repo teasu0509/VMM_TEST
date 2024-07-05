@@ -1,5 +1,12 @@
 package com.teasu.demo.entity;
 
-public enum UserAuthorityEnum {
-	ADMIN,USER,USER_CUSTOMER
+import org.springframework.security.core.GrantedAuthority;
+
+public enum UserAuthorityEnum implements GrantedAuthority{
+	ADMIN,USER,USER_CUSTOMER;
+
+	@Override
+	public String getAuthority() {
+		return name();
+	}
 }

@@ -1,7 +1,7 @@
 package com.teasu.demo.service;
 
-import com.teasu.demo.entity.Member;
+import com.teasu.demo.entity.User;
 
 public interface UserService {
-	Member findByAccount(String account);
+	User findByUsername(String username);
 }
