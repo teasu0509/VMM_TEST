@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public class MariaDBExample {
 	public static void main(String[] args) {
-        String jdbcUrl = "jdbc:mariadb://192.168.182.128:3306/vmm?useSSL=false";
+        String jdbcUrl = "jdbc:mariadb://localhost:3306/vmm?useSSL=false";
         String username = "root";
-        String password = "12345678";
+        String password = "rootroot";
 
         try(Connection connection = DriverManager.getConnection(jdbcUrl, username, password)) {
             // Connection 成功建立，可以進行數據庫操作
